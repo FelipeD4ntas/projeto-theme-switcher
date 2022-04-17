@@ -48,14 +48,14 @@ function irParaLightside() {
     trocaClasse('esquerda', 'direita');
     mudarDisplay(darkSide, lightSide);
     trocaArquivoJS(particlesLightside, 'js/lightside.js');
-    body.style.backgroundImage = 'url(./assets/imagens/lightside.jpg)';
+    body.style.backgroundImage = 'url("../assets/imagens/lightside.jpg")';
 }
 
 function irParaDarkside() {
     trocaClasse('direita', 'esquerda');
     mudarDisplay(lightSide, darkSide);
     trocaArquivoJS(particlesDarkside, 'js/darkside.js');
-    body.style.backgroundImage = 'url(./assets/imagens/darkside.jpg)';
+    body.style.backgroundImage = 'url("../assets/imagens/darkside.jpg")';
 }
 
 
