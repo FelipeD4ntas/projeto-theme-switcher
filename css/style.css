@@ -7,6 +7,8 @@
 	--dark: #292C35;
 	--light: #F1F1F1;
 	--label: #111;
+    --darksideColor: #AC020B;
+    --lightsideColor: #09AAF4;
 }
 
 * {
@@ -134,7 +136,7 @@ p {
     display: block;
     font-weight: bold;
     font-size: 3rem;
-    color: #09AAF4;
+    color: var(--lightsideColor);
     text-transform: uppercase;
     text-align: center;
     text-shadow: 2px 2px 1px black;
@@ -144,7 +146,7 @@ p {
     display: block;
     font-weight: bold;
     font-size: 3rem;
-    color: #AC020B;
+    color: var(--darksideColor);
     text-transform: uppercase;
     text-align: center;
     text-shadow: 2px 2px 1px black;
