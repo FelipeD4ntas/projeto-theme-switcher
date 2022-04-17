@@ -1,0 +1,167 @@
+@font-face {
+    font-family: 'star';
+    src: url('../fonts/SerifGothicBlackRegular.ttf');
+}
+
+:root {
+	--dark: #292C35;
+	--light: #F1F1F1;
+	--label: #111;
+}
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'star', cursive;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-image: url('../assets/imagens/darkside.jpg');
+    background-position: center;
+    background-size: cover;
+    font-size: 1.6rem;
+}
+
+#particles-js {
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #000000;
+}
+
+.box-sobre {
+    display: flex;
+    justify-content: center;
+}
+
+.box-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+.toggle {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 200px;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.575);
+    border-radius: 150px;
+    position: relative;
+    padding: 3px;
+}
+
+.circulo {
+    height: 100%;
+    width: 70px;
+    background: #F2E023;
+    border-radius: 50%;
+    z-index: 175;
+    transition: transform 0.5s;
+}
+
+.esquerda {
+  transform: translateX(0)
+}
+
+.direita {
+    transform: translateX(calc(200px - 76px));
+}
+
+.escuro, .claro {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+}
+
+.escuro {
+    left: 10px;
+}
+
+.claro {
+    right: 10px;
+}
+
+.escuro img,
+.claro img {
+    width: 60px;
+}
+
+.lightSide {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.575);
+    align-self: flex-end;
+    display: none;
+}
+
+.darkSide {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.575);
+    align-self: flex-start;
+}
+
+p {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #F1F1F1;
+    text-transform: uppercase;
+    line-height: 4rem;
+    text-align: center;
+    word-spacing: 7px;
+    text-shadow: 2px 1px 1px black;
+}
+
+.lightSide > span {
+    display: block;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #09AAF4;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 2px 2px 1px black;
+}
+
+.darkSide > span {
+    display: block;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #AC020B;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 2px 2px 1px black;
+}
+
+@media(max-width: 560px) {
+    .lightSide,
+    .darkSide {
+        border-radius: 0;
+    }
+    
+    p {
+        font-size: 1.5rem;
+    }
+
+    .lightSide > span,
+    .darkSide > span {
+        font-size:2rem;
+    }
+}
