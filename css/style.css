@@ -1,7 +1,6 @@
-@font-face {
-    font-family: 'star';
-    src: url('../fonts/SerifGothicBlackRegular.ttf');
-}
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap');
 
 :root {
 	--dark: #292C35;
@@ -16,7 +15,7 @@
     border: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'star', cursive;
+    font-family: 'Open Sans', sans-serif;
 }
 
 html {
@@ -124,7 +123,7 @@ canvas {
 }
 
 p {
-    font-weight: bold;
+    font-weight: 400;
     font-size: 1.8rem;
     color: #F1F1F1;
     text-transform: uppercase;
