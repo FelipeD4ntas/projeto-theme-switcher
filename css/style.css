@@ -28,6 +28,7 @@ body {
     background-position: center;
     background-size: cover;
     font-size: 1.6rem;
+    overflow-x: hidden;
 }
 
 #particles-js {
@@ -150,6 +151,68 @@ p {
     text-transform: uppercase;
     text-align: center;
     text-shadow: 2px 2px 1px black;
+}
+
+.x-wing {
+    display: none;
+    animation-name: xWing;
+    max-width: 600px;
+    top: 10px;
+    right: 0;
+}
+
+.x-wing-dois {
+    display: none;
+    animation-name: xWingDois;
+    max-width: 800px;
+    top: 310px;
+    right: 0;
+}
+
+.imperio {
+    animation-name: imperio;
+    max-width: 800px;
+    left: 0;
+}
+
+.img {
+    transition-duration: 2s;
+    position: absolute;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    z-index: -1;
+}
+
+@keyframes xWing {
+    from {
+        transform: translateX(150px);
+    }
+    to {
+        transform: translateX(-15px);
+    }
+}
+
+@keyframes xWingDois {
+    from {
+        ransform: translateY(-50px);
+    }
+    50% {
+        transform: translateY(150px);
+    }
+    to {
+        transform: translateX(50px);
+    }
+}
+
+@keyframes imperio {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(100px);
+    }
 }
 
 @media(max-width: 560px) {

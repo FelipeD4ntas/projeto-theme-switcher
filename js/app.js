@@ -1,6 +1,8 @@
 const circulo = document.querySelector('.circulo');
 const lightSide = document.querySelector('.lightSide');
 const darkSide = document.querySelector('.darkSide');
+const imgLightside = document.querySelectorAll('.imgLightSide')
+const imgDarkside = document.querySelector('.imgDarkSide');
 const music = new Audio('./assets/audio/somSabreLuz.wav');
 const body =  document.body
 let particlesDarkside = null;
@@ -43,11 +45,26 @@ function FazerEfeitosSonoro() {
     music.play();
 }
 
+
+
 function trocouTema() {
   const nomeClass = circulo.classList.value;
   FazerEfeitosSonoro();
   verificaClasse(nomeClass);
+  
 };
+
+function ativarAnimacao(img)  {
+    img.style.display = 'block';
+    img.style.transform = 'translateX(1000px)';
+    img.style.animationDuration = '10s';
+}
+
+function desativarAnimacao(img)  {
+    img.style.display = 'none';
+    img.style.transform = 'translateX(0)';
+    img.style.animationDuration = '0';
+}
 
 function irParaLightside() {
     manterLargura()
@@ -55,6 +72,8 @@ function irParaLightside() {
     mudarDisplay(darkSide, lightSide);
     trocaArquivoJS(particlesLightside, 'js/lightside.js');
     body.style.backgroundImage = 'url(./assets/imagens/lightside.jpg)';
+    imgLightside.forEach(ativarAnimacao);
+    desativarAnimacao(imgDarkside);
 }
 
 function irParaDarkside() {
@@ -62,6 +81,8 @@ function irParaDarkside() {
     mudarDisplay(lightSide, darkSide);
     trocaArquivoJS(particlesDarkside, 'js/darkside.js');
     body.style.backgroundImage = 'url(./assets/imagens/darkside.jpg)';
+    imgLightside.forEach(desativarAnimacao);
+    ativarAnimacao(imgDarkside);
 }
 
 
