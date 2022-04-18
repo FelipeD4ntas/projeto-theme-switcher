@@ -45,8 +45,6 @@ function FazerEfeitosSonoro() {
     music.play();
 }
 
-
-
 function trocouTema() {
   const nomeClass = circulo.classList.value;
   FazerEfeitosSonoro();
@@ -54,22 +52,22 @@ function trocouTema() {
   
 };
 
-function ativarAnimacao(img)  {
+function ativarAnimacaoLightside(img)  {
     img.style.display = 'block';
     img.style.transform = 'translateX(1000px)';
     img.style.animationDuration = '10s';
 }
 
+function desativarAnimacaoLightside(img)  {
+    img.style.display = 'none';
+    img.style.transform = 'translateX(0)';
+    img.style.animationDuration = '0';
+}
+
 function ativarAnimacaoDarkside(img)  {
-    let i = 0;
     img.style.display = 'block';
     img.style.animationDuration = '10s';
-    const addWidth = setInterval(() => {
-        img.style.maxWidth = `${i += 20}px`
-        if (i == 800) {
-            clearInterval(addWidth);
-        }
-    }, 50)
+    animandoNaveImperio()
 }
 
 function desativarAnimacaoDarside(img)  {
@@ -78,10 +76,16 @@ function desativarAnimacaoDarside(img)  {
     img.style.maxWidth = '0px';
 }
 
-function desativarAnimacao(img)  {
-    img.style.display = 'none';
-    img.style.transform = 'translateX(0)';
-    img.style.animationDuration = '0';
+function animandoNaveImperio() {
+    let acc = 0;
+    const larguraMaxima = acc == 800
+    const addWidth = setInterval(() => {
+        imgDarkside.style.maxWidth = `${acc += 20}px`;
+
+        if (larguraMaxima) {
+            clearInterval(addWidth);
+        }
+    }, 50);
 }
 
 function irParaLightside() {
@@ -90,7 +94,7 @@ function irParaLightside() {
     mudarDisplay(darkSide, lightSide);
     trocaArquivoJS(particlesLightside, 'js/lightside.js');
     body.style.backgroundImage = 'url(./assets/imagens/lightside.jpg)';
-    imgLightside.forEach(ativarAnimacao);
+    imgLightside.forEach(ativarAnimacaoLightside);
     desativarAnimacaoDarside(imgDarkside);
 }
 
@@ -99,7 +103,7 @@ function irParaDarkside() {
     mudarDisplay(lightSide, darkSide);
     trocaArquivoJS(particlesDarkside, 'js/darkside.js');
     body.style.backgroundImage = 'url(./assets/imagens/darkside.jpg)';
-    imgLightside.forEach(desativarAnimacao);
+    imgLightside.forEach(desativarAnimacaoLightside);
     ativarAnimacaoDarkside(imgDarkside);
 }
 
