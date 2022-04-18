@@ -60,6 +60,24 @@ function ativarAnimacao(img)  {
     img.style.animationDuration = '10s';
 }
 
+function ativarAnimacaoDarkside(img)  {
+    let i = 0;
+    img.style.display = 'block';
+    img.style.animationDuration = '10s';
+    const addWidth = setInterval(() => {
+        img.style.maxWidth = `${i += 20}px`
+        if (i == 800) {
+            clearInterval(addWidth);
+        }
+    }, 50)
+}
+
+function desativarAnimacaoDarside(img)  {
+    img.style.display = 'none';
+    img.style.animationDuration = '0';
+    img.style.maxWidth = '0px';
+}
+
 function desativarAnimacao(img)  {
     img.style.display = 'none';
     img.style.transform = 'translateX(0)';
@@ -73,7 +91,7 @@ function irParaLightside() {
     trocaArquivoJS(particlesLightside, 'js/lightside.js');
     body.style.backgroundImage = 'url(./assets/imagens/lightside.jpg)';
     imgLightside.forEach(ativarAnimacao);
-    desativarAnimacao(imgDarkside);
+    desativarAnimacaoDarside(imgDarkside);
 }
 
 function irParaDarkside() {
@@ -82,7 +100,7 @@ function irParaDarkside() {
     trocaArquivoJS(particlesDarkside, 'js/darkside.js');
     body.style.backgroundImage = 'url(./assets/imagens/darkside.jpg)';
     imgLightside.forEach(desativarAnimacao);
-    ativarAnimacao(imgDarkside);
+    ativarAnimacaoDarkside(imgDarkside);
 }
 
 

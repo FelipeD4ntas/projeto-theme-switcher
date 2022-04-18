@@ -21,6 +21,7 @@
 
 html {
     font-size: 62.5%;
+    overflow: hidden;
 }
 
 body {
@@ -28,7 +29,7 @@ body {
     background-position: center;
     background-size: cover;
     font-size: 1.6rem;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 #particles-js {
@@ -170,13 +171,14 @@ p {
 }
 
 .imperio {
+    transition: all 5s;
     animation-name: imperio;
     max-width: 800px;
     left: 0;
 }
 
 .img {
-    transition-duration: 2s;
+    transition-duration: all 2s;
     position: absolute;
     animation-duration: 10s;
     animation-timing-function: linear;
@@ -228,5 +230,22 @@ p {
     .lightSide > span,
     .darkSide > span {
         font-size:2rem;
+    }
+
+    .x-wing {
+        max-width: 300px;
+        top: 10px;
+        right: 0;
+    }
+    
+    .x-wing-dois {
+        max-width: 300px;
+        top: 210px;
+        right: 0;
+    }
+    
+    .imperio {
+        max-width: 400px;
+        left: 0;
     }
 }
