@@ -78,11 +78,10 @@ function desativarAnimacaoDarside(img)  {
 
 function animandoNaveImperio() {
     let acc = 0;
-    const larguraMaxima = acc == 800
     const addWidth = setInterval(() => {
         imgDarkside.style.maxWidth = `${acc += 20}px`;
 
-        if (larguraMaxima) {
+        if (acc == 800) {
             clearInterval(addWidth);
         }
     }, 50);
