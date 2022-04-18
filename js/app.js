@@ -1,6 +1,7 @@
 const circulo = document.querySelector('.circulo');
 const lightSide = document.querySelector('.lightSide');
 const darkSide = document.querySelector('.darkSide');
+const music = new Audio('./assets/audio/somSabreLuz.wav');
 const body =  document.body
 let particlesDarkside = null;
 let particlesLightside = null;
@@ -38,8 +39,13 @@ function verificaClasse(nomeClass) {
     irParaDarkside();
 }
 
+function FazerEfeitosSonoro() {
+    music.play();
+}
+
 function trocouTema() {
-  const nomeClass = circulo.classList.value; 
+  const nomeClass = circulo.classList.value;
+  FazerEfeitosSonoro();
   verificaClasse(nomeClass);
 };
 
